@@ -1,13 +1,3 @@
 <h1>Hello, {{ title }}</h1>
 
-<div [ngClass]="cssClass">
-  Bonjour {{firstname}}
-</div>
-<button (click)="clicked($event)">Click me</button>
-<div>{{counter}}</div>
-<ul>
-  <li *ngFor="let car of cars; let isOdd=odd"
-      [ngClass]=" isOdd ? 'myclass' : 'myclass2' ">
-    {{car}}
-  </li>
-</ul>
+<crm-login></crm-login>
