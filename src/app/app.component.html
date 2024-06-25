@@ -8,3 +8,9 @@
 
 
 <crm-login></crm-login>
+
+<crm-dummy [aValue]="title" [anotherValue]="data"
+      (sended)="received($event)"></crm-dummy>
+
+<crm-dummy [aValue]="data" [anotherValue]="title"
+      (sended)="received2($event)"></crm-dummy>
