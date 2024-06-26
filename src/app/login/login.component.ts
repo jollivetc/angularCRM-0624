@@ -5,6 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { HelpComponent } from '../component/help/help.component';
+import { AuthenticationService } from './authentication.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class LoginComponent {
     required: 'login required',
     minlength: 'should be 3 char at least'
   }
-  constructor(){
+  constructor(private authentService: AuthenticationService){
     this.loginForm= new FormGroup({
       login: new FormControl('', [Validators.required, Validators.minLength(3)]),
       password: new FormControl('', [Validators.required, no$InPasswordValidator])
@@ -34,7 +35,10 @@ export class LoginComponent {
   }
 
   login():void{
-    console.log(this.loginForm);
+    const user = this.authentService.authentUser(
+          this.loginForm.value.login,
+          this.loginForm.value.password);
+    console.log(user);
   }
 }
 
