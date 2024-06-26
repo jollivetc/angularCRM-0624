@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { DummyComponent } from './component/dummy/dummy.component';
 
 @Component({
   selector: 'crm-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, MatToolbarModule, DummyComponent],
+  imports: [RouterOutlet, LoginComponent,RouterLink,RouterLinkActive,
+            MatToolbarModule, DummyComponent,
+            MatIconModule, MatButtonModule
+          ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

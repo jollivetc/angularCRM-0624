@@ -6,3 +6,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ng-invalid.ng-touched{
   border-color: red;
 }
+
+.router-link-active{
+  .mat-icon {
+    color: orange;
+  }
+}
