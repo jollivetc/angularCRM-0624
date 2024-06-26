@@ -30,6 +30,7 @@ export class AuthenticationService {
 
   disconnect():void{
     this.user= undefined;
+    this.jwt='';
     sessionStorage.clear()
   }
 
