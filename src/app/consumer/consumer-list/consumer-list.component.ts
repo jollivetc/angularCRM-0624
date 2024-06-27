@@ -5,11 +5,15 @@ import { Consumer } from '../model/consumer';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { PhonePipe } from '../../common/phone.pipe';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'crm-consumer-list',
   standalone: true,
-  imports: [AsyncPipe, NgFor, PhonePipe, FormsModule],
+  imports: [AsyncPipe, NgFor, PhonePipe, FormsModule,
+           MatIconModule, MatButton, RouterLink],
   templateUrl: './consumer-list.component.html',
   styleUrl: './consumer-list.component.scss'
 })

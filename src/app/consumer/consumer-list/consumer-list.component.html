@@ -1,5 +1,7 @@
 <input type="text" [(ngModel)]="searched" (keyup)="search()">
-
+<a mat-icon-button routerLink="/consumer/new">
+  <mat-icon>person_add</mat-icon>
+</a>
 <table>
   <thead>
     <tr>
@@ -20,7 +22,12 @@
     <td>{{consumer.phone|phone}}</td>
     <td>{{consumer.email}}</td>
     <td>
-      Actions
+      <span>
+        <a mat-icon-button
+            [routerLink]="['/consumer', consumer.id]" >
+          <mat-icon>edit</mat-icon>
+        </a>
+      </span>
     </td>
   </tr>
 </table>
