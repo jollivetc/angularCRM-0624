@@ -2,11 +2,12 @@ import { Component, OnDestroy } from '@angular/core';
 import { DemoObservableService } from '../common/demo-observable.service';
 import { Observable, Subscription, map, take } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { PhonePipe } from '../common/phone.pipe';
 
 @Component({
   selector: 'crm-home',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PhonePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -14,6 +15,8 @@ export class HomeComponent implements OnDestroy{
 
   private subs:Subscription[]= []
   myObservable?: Observable<number>;
+  phoneNumber='0123456789';
+
   constructor(private demoObs:DemoObservableService){}
 
   ngOnDestroy(): void {
