@@ -28,4 +28,18 @@ export class ConsumerListComponent implements OnInit{
     this.consumersObs =this.consumersService.filterConsumers(this.searched);
   }
 
+  deleteConsumer(id:number):void{
+    this.consumersService.deleteConsumer(id)
+      .subscribe({
+        next:(data:any)=>{
+          if(this.searched){
+            this.consumersObs= this.consumersService.filterConsumers(this.searched);
+          }else{
+            this.consumersObs = this.consumersService.getList()
+          }
+        },
+        error:(error:Error)=>{console.log(error)},
+        complete:()=>{}
+      })
+  }
 }
